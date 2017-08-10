@@ -10,5 +10,5 @@ setup(name='lunchboy',
       license='MIT',
       packages=['lunchboy'],
       install_requires=['Scrapy'],
-      scripts=['bin/lunchboy']
+      scripts=['bin/lunch'],
       zip_safe=False)
