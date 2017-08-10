@@ -14,6 +14,7 @@ class LunchSpider(scrapy.Spider):
 
     def parse(self, response):
         weekday = calendar.day_name[date.today().weekday()].lower()
+        # TODO(liann): make this more resilient to page changes
         tmpl = string.Template("//h2[contains(translate(., $upper_day, $day), $day)]")
         xpath_query = tmpl.substitute(upper_day=weekday.upper(),day=weekday)
 
