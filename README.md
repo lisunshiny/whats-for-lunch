@@ -2,7 +2,7 @@
 
 Want to know what's for lunch from the terminal?
 
-This package uses Scrapy to scrape Appboy's Fooda menu and return the day's lunch.
+This package scrapes http://foodamenus.com/appboy to return today's lunch.
 
 ## Install
 
