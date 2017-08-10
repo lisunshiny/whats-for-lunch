@@ -17,3 +17,45 @@ pip install lunchboy
 $ lunch
 today's lunch is alpha fusion!!!!!!!!!!!
 ```
+
+`menu`: Returns the day's lunch restaurant AND the menu, e.g.,
+
+```
+$ menu
+today's lunch is alpha fusion!!!!!!!!!!!
+
+--------------- MENU ----------------
+
+None
+Alpha Fusion
+ALPHA
+Fusion
+DUMPLINGS
+ALL DUMPLINGS COME WITH YOUR CHOICE OF SAUCE-HAI SING, SWEET
+CHILI, SRIRACHA
+THE CLASSIC
+Pan fried pork and leek dumplings
+GREENS MACHINE
+Vegetarian dumplings
+FRIED CHICKEN
+Pan fried chicken dumplings
+DUMPLINGS OF THE SEA
+Japanese shrimp shuma
+NOODLES AND RICE
+CHOW FUN
+Vegetarian Cantonese stir fried rice
+noodles, with carrots and Chinese
+broccoli
+SINGAPORE THIN NOODLES
+Stir-fried curried rice vermicelli
+noodles, with vegetables
+BROWN RICE
+COMBINATIONS
+THE ALPHA COMBO
+Choice of any 4 dumplings, noodles
+or rice, partnered with steamed
+vegetables
+SIDES
+DAILY ROTATING STEAMED
+VEGETABLES
+```
