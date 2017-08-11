@@ -20,12 +20,13 @@ today's lunch is alpha fusion!!!!!!!!!!!
 
 `menu`: Returns the day's lunch restaurant AND the menu, e.g.,
 
-**Note:** To use this, you must first run
+**Note:** To use this command, you must first add this to your bash profile
+
 ```bash
 export GCM_KEY=super_secret_gcm_key
 ```
 
-If you need a GCM key, ask Liann nicely
+If you need a GCM key, ask me nicely
 
 ```
 $ menu
