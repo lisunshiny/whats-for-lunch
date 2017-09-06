@@ -1,5 +1,7 @@
 # Lunchboy
 
+## NOTE: Lunchboy is a no-op right now because they changed their site :(. I'm going to take a week or two to familiarize myself with the new site's flow before I update the scraper.
+
 Want to know what's for lunch from the terminal?
 
 This package scrapes http://foodamenus.com/appboy to return today's lunch.
