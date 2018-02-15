@@ -2,7 +2,7 @@ from setuptools import setup
 
 
 setup(name='braise',
-      version='0.3',
+      version='0.5',
       description='Lunch without #lunch',
       url='http://github.com/lisunshiny/braise',
       author='Liann Sun',
