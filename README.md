@@ -1,34 +1,29 @@
-# Lunchboy
+# Braise
 
-## NOTE: Lunchboy is a no-op right now because they changed their site :(. I'm going to take a week or two to familiarize myself with the new site's flow before I update the scraper.
+Want to know what's for lunch @ Braze from the terminal?
 
-Want to know what's for lunch from the terminal?
-
-This package scrapes http://foodamenus.com/appboy to return today's lunch.
+This package scrapes https://www.fooda.com/braze to return today's lunch.
 
 ## Install
+
+1. Install the gem
 
 ```bash
 pip install lunchboy
 ```
 
-## Commands
-`lunch`: Returns the day's lunch restaurant, e.g.,
-
-```
-$ lunch
-today's lunch is alpha fusion!!!!!!!!!!!
-```
-
-`menu`: Returns the day's lunch restaurant AND the menu, e.g.,
-
-**Note:** To use this command, you must first add this to your bash profile
+2. Make your own GCM key following the instructions [here](https://support.google.com/cloud/answer/6158862?hl=en), and then add this line to your Bash profile.
 
 ```bash
-export GCM_KEY=super_secret_gcm_key
+export GCM_KEY=your_newly_created_super_secret_gcm_key
 ```
 
 If you need a GCM key, ask me nicely
+
+## Commands
+
+`lunch`: Returns the day's menus, e.g.,
+
 
 ```
 $ menu

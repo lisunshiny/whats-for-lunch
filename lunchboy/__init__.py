@@ -11,9 +11,5 @@ def lunchboy():
     print("in lunchboy")
 
 def lunch():
-    process.crawl(LunchSpider)
-    process.start()
-
-def menu():
     process.crawl(LunchSpider, include_menu=True)
     process.start()

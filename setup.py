@@ -1,14 +1,14 @@
 from setuptools import setup
 
 
-setup(name='lunchboy',
-      version='0.2',
+setup(name='braise',
+      version='0.3',
       description='Lunch without #lunch',
-      url='http://github.com/lisunshiny/lunchboy',
+      url='http://github.com/lisunshiny/braise',
       author='Liann Sun',
-      author_email='liann@appboy.com',
+      author_email='liann@braze.com',
       license='MIT',
-      packages=['lunchboy'],
+      packages=['braise'],
       install_requires=['Scrapy'],
-      scripts=['bin/lunch', 'bin/menu'],
+      scripts=['bin/lunch'],
       zip_safe=False)

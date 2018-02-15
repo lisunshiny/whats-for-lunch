@@ -16,53 +16,40 @@ class LunchSpider(scrapy.Spider):
         self.include_menu = include_menu
 
     def start_requests(self):
-        yield scrapy.Request(url="http://foodamenus.com/appboy", callback=self.parse)
+        print("Yay lunch")
+        print("")
+        yield scrapy.Request(url="https://www.fooda.com/braze", callback=self.parse)
 
     def parse(self, response):
-        weekday = calendar.day_name[date.today().weekday()].lower()
-
-        self.print_name(weekday, response)
-
         if self.include_menu:
-            self.print_spacer()
-            self.print_menu(weekday, response)
+            self.print_menu(response)
 
-    def print_name(self, weekday, response):
-        tmpl = string.Template("//h2[contains(., '$day')]")
-        xpath_query_for_name = tmpl.substitute(day=weekday.capitalize())
-        matches = response.xpath(xpath_query_for_name).extract()
-        match = matches[0].lower()
-        matcher = re.compile(weekday +': (.*)</')
-        restaurant_names = matcher.findall(match)
-        message = "today's lunch is %s!!!!!!!!!!!" % restaurant_names[0]
-        print(message)
+    def print_menu(self, response):
+        img_urls = response.xpath("//div[contains(@class, 'myfooda-event')]/child::img/@src").extract()
+        data = {'requests': []}
 
-    def print_menu(self, weekday, response):
-        img_tmpl = string.Template("//h2[contains(., '$day')]/following::img[1]/@src")
-        xpath_query_for_image = img_tmpl.substitute(day=weekday.capitalize())
-        img_matches = response.xpath(xpath_query_for_image).extract()
-        img_url = img_matches[0]
+        for img_url in img_urls:
+            data['requests'].append({
+                'image':{
+                    'source':{
+                        'imageUri': img_url
+                    }
+                },
+                'features':[
+                    {
+                        'type':"TEXT_DETECTION"
+                    }
+                ]
+            })
 
-        data = {
-            'requests':[
-                {
-                    'image':{
-                        'source':{
-                            'imageUri': img_url
-                        }
-                    },
-                    'features':[
-                        {
-                            'type':"TEXT_DETECTION"
-                        }
-                    ]
-                }
-            ]
-        }
         r = requests.post("https://vision.googleapis.com/v1/images:annotate?key=%s" % os.environ.get('GCM_KEY'), json=data)
-        print r.json()["responses"][0]["textAnnotations"][0]["description"]
+        menu_no = 1
+        for response in r.json()["responses"]:
+            self.print_spacer("Menu " + str(menu_no))
+            menu_no = menu_no + 1
+            print response["textAnnotations"][0]["description"]
 
-    def print_spacer(self):
+    def print_spacer(self, message):
         print("")
-        print("--------------- MENU ----------------")
+        print("--------------- " + message + " ----------------")
         print("")
