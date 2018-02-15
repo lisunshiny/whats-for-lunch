@@ -7,8 +7,8 @@ process = CrawlerProcess({
     'LOG_ENABLED': False
 })
 
-def lunchboy():
-    print("in lunchboy")
+def braise():
+    print("in braise")
 
 def lunch():
     process.crawl(LunchSpider, include_menu=True)
