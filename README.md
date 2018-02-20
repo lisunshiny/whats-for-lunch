@@ -1,4 +1,4 @@
-# Braise
+# Braise (formerly known as Lunchboy)
 
 Want to know what's for lunch @ Braze from the terminal?
 
